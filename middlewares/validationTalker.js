@@ -71,7 +71,7 @@ const validWatched = (req, res, next) => {
   });
   }
   return next(); 
-}
+};
 
 const validRate = (req, res, next) => {
   const { rate } = req.body.talk;
