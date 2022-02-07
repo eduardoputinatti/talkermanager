@@ -25,13 +25,14 @@ app.listen(PORT, () => {
 });
 
 app.get('/talker', getTalker);
+app.get('/talker/search', validTokenSearch, searchTalkerFunc);
 app.get('/talker/:id', getId);
+
 app.post('/login', validPassword, validMail, token);
 app.post('/talker', validations,
 createTalker);
 app.put('/talker/:id', validationsPut, putTalker);
-app.delete('/talker/:id', validateToken, delTalker);
-app.get('./talker/search', validTokenSearch, searchTalkerFunc);
+app.delete('/talker/:id', validateToken[0], delTalker);
 
 // não remova esse endpoint, e para o avaliador funcionar
 app.get('/', (_request, response) => {
