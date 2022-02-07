@@ -31,7 +31,7 @@ app.post('/talker', validations,
 createTalker);
 app.put('/talker/:id', validationsPut, putTalker);
 app.delete('/talker/:id', validateToken, delTalker);
-app.get('./talker/search', searchTalkerFunc);
+app.get('./talker/search', validTokenSearch, searchTalkerFunc);
 
 // não remova esse endpoint, e para o avaliador funcionar
 app.get('/', (_request, response) => {
