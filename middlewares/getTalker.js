@@ -1,4 +1,4 @@
-const fs = require('fs').promisses;
+const fs = require('fs').promises;
 
 module.exports = async (req, res) => {
   const talker = await fs
