@@ -3,12 +3,15 @@ const bodyParser = require('body-parser');
 
 const getTalker = require('./middlewares/getTalker');
 const getId = require('./middlewares/getId');
+const token = require('./middlewares/token');
+const login = require('./middlewares/login');
 
 const app = express();
 app.use(bodyParser.json());
 
 app.get('/talker/:id', getId);
 app.get('/talker', getTalker);
+app.post('/post', token, login);
 
 const HTTP_OK_STATUS = 200;
 const PORT = '3000';
