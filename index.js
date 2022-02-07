@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 
 app.get('/talker/:id', getId);
 app.get('/talker', getTalker);
-app.post('/post', token, login);
+app.post('/login', token, login);
 
 const HTTP_OK_STATUS = 200;
 const PORT = '3000';
