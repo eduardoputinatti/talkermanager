@@ -10,8 +10,8 @@ module.exports = async (req, res) => {
   const findTalker = getId((nome) => nome.id === parseInt(id, 10));
 
   if (!findTalker) {
-    res.status(404).send({ message: 'Pessoa palestrante não encontrada' });
+    return res.status(404).json({ message: 'Pessoa palestrante não encontrada' });
   }
 
-  res.status(200).json(getId);
+  return res.status(200).json(getId);
 };
